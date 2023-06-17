@@ -119,6 +119,7 @@ export class HaPasswordManagerPolyfill extends LitElement {
   private _valueChanged(ev: Event) {
     const target = ev.target! as HTMLInputElement;
     this.stepData = { ...this.stepData, [target.id]: target.value };
+    // Gets the data from polyfill -> shadow dom
     fireEvent(this, "value-changed", {
       value: this.stepData,
     });
